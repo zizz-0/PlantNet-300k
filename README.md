@@ -1,4 +1,10 @@
-# PlantNet-300K
+# PlantNet-300K Project Clone
+This repository is cloned from [PlantNet-300K](https://github.com/plantnet/PlantNet-300K). It is used purely as a proof-of-concept for the larger [WARDEN Project](https://github.com/njii-comet-2024/WARDEN).
+
+`plantnet.py` is a basic detection program using the pre-trained [resnet18](https://lab.plantnet.org/seafile/d/01ab6658dad6447c95ae/files/?p=%2Fresnet18_weights_best_acc.tar) model with [class to species id](https://lab.plantnet.org/seafile/d/bed81bc15e8944969cf6/files/?p=%2Fclass_idx_to_species_id.json] and [species id to name](https://lab.plantnet.org/seafile/d/bed81bc15e8944969cf6/files/?p=%2Fplantnet300K_species_id_2_name.json) json files to write in the detections to a new image file.
+
+
+## PlantNet-300K
 
 <p align="middle">
   <img src="/images/1.jpg" width="180" hspace="2"/>
@@ -10,11 +16,11 @@
 This repository contains the code used to produce the benchmark in the paper ***"Pl@ntNet-300K: a plant image dataset with high label
 ambiguity and a long-tailed distribution"***.
 
-## Download the dataset
+### Download the dataset
 
 In order to train a model on the PlantNet-300K dataset, you first have to [download the dataset on Zenodo](https://zenodo.org/record/5645731#.Yuehg3ZBxPY).
 
-## Scientific Publication
+### Scientific Publication
 
 You can find detailed information about the dataset as well as extensive experiments in the [NeurIPS 2021 paper](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/7e7757b1e12abcb736ab9a754ffb617a-Paper-round2.pdf).
 If you use this work for your research, please cite the paper:
@@ -26,7 +32,7 @@ If you use this work for your research, please cite the paper:
     year      = {2021},
     }
     
-## Overview
+### Overview
 
 Pl@ntNet-300K is a plant dataset containing 306,146 plant images covering 1081 species (the classes).
 Pl@ntNet-300K is characterized by high class ambiguity and strong class imbalance.
@@ -46,7 +52,7 @@ The images are split into a train, val and test set, each containing the followi
 
 </div>
 
-### Dataset Version & Meta-data files
+#### Dataset Version & Meta-data files
 
 Make sure you download the latest version of the dataset in Zenodo (version 1.1 as in the link above, not 1.0).
 The difference lies in the metadata files, the images are the same.
@@ -57,12 +63,12 @@ The folder contains three files:
 - `plantnet300K_species_id_2_name.json`, maps the species id and its scientific name
 - `class_idx_to_species_id.json`, maps the class id (from 0 to 1080) to the species id (useful for the pretrained weights)
 
-### Hyperparameters
+#### Hyperparameters
 
 If you are looking for the hyperparameters used in the paper, you can find them in the [supplementary material](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/7e7757b1e12abcb736ab9a754ffb617a-Abstract-round2.html).
 
 
-### Pre-trained models
+#### Pre-trained models
 
 You can find the pre-trained models [here](https://lab.plantnet.org/seafile/d/01ab6658dad6447c95ae/).
 To load the pre-trained models, you can simply use the `load_model` function in `utils.py`. For instance, if you want to load the resnet18 weights:
@@ -79,14 +85,14 @@ load_model(model, filename=filename, use_gpu=use_gpu)
 ```
 
 Note that if you want to fine-tune the model on another dataset, you have to change the last layer. You can find examples in the `get_model` function in `utils.py. 
-### Requirements
+#### Requirements
 
 Only pytorch, torchvision are necessary for the code to run. 
 If you have installed anaconda, you can run the following command:
 
 ```conda env create -f plantnet_300k_env.yml```
 
-### Training a model
+#### Training a model
 
 In order to train a model on the PlantNet-300K dataset, run the following command:
 

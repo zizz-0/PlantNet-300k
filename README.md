@@ -1,7 +1,7 @@
 # PlantNet-300K Project Clone
 This repository is cloned from [PlantNet-300K](https://github.com/plantnet/PlantNet-300K). It is used purely as a proof-of-concept for the larger [WARDEN Project](https://github.com/njii-comet-2024/WARDEN).
 
-`plantnet.py` is a basic detection program using the pre-trained [resnet18](https://lab.plantnet.org/seafile/d/01ab6658dad6447c95ae/files/?p=%2Fresnet18_weights_best_acc.tar) model with [class to species id](https://lab.plantnet.org/seafile/d/bed81bc15e8944969cf6/files/?p=%2Fclass_idx_to_species_id.json] and [species id to name](https://lab.plantnet.org/seafile/d/bed81bc15e8944969cf6/files/?p=%2Fplantnet300K_species_id_2_name.json) json files to write in the detections to a new image file.
+`plantnet.py` is a basic detection program using the pre-trained [resnet18](https://lab.plantnet.org/seafile/d/01ab6658dad6447c95ae/files/?p=%2Fresnet18_weights_best_acc.tar) model with [class to species id](https://lab.plantnet.org/seafile/d/bed81bc15e8944969cf6/files/?p=%2Fclass_idx_to_species_id.json) and [species id to name](https://lab.plantnet.org/seafile/d/bed81bc15e8944969cf6/files/?p=%2Fplantnet300K_species_id_2_name.json) json files to write in the detections to a new image file.
 
 
 ## PlantNet-300K
